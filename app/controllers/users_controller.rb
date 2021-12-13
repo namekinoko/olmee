@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def index
+    redirect_to( new_user_path )
   end
   
   def show
@@ -17,7 +18,7 @@ class UsersController < ApplicationController
       redirect_to( @user )
     else
       flash[:danger] = @user.errors.full_messages
-      redirect_to( new_user_path )
+      render 'new'
     end
   end
 
