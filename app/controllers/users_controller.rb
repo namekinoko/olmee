@@ -16,13 +16,18 @@ class UsersController < ApplicationController
       flash[:success] = "ユーザー登録に成功しました。"
       redirect_to( @user )
     else
-      render 'new'
+      flash[:danger] = @user.errors.full_messages
+      redirect_to( new_user_path )
     end
   end
 
   private
     def user_params
-      params.require( :user ).permit( :name, :email, :password,
+      params.require( :user ).permit( 
+        :name,
+        :email,
+        :nickname,
+        :password,
         :password_confirmation )
     end
 end

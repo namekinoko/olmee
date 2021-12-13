@@ -1,27 +1,9 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-}
-
-html {
-  font-size: 62.5%;
-}
-
-ul {
-  list-style: none;
-}
-
-body {
-  height: 1700px;
-}
-
 //背景画像
 .top-wrapper {
   background-image: url(/assets/top_page.jpg);
   background-size: cover;
   height: 1000px;
+  width: 100%;
 }
 //〜ここまで背景画像〜
 
@@ -35,6 +17,9 @@ nav {
   top: 0;
   .site-icon {
     font-size: 20px;
+    position: absolute;
+    top: 15px;
+    left: 15px;
   }
   #navi-ul {
     text-align: center;
@@ -73,6 +58,7 @@ nav {
 }
 // 〜ここまでキャッチフレーズ〜
 
+//サービス説明
 .about-wrapper {
   text-align: center;
   padding: 30px 0;
@@ -91,7 +77,9 @@ nav {
     }
   }
 }
+//〜ここまでサービス説明〜
 
+//サービス料金
 .price-wrapper {
   text-align: center;
   background-color: rgb(218, 211, 125);
@@ -113,10 +101,4 @@ nav {
     }
   }
 }
-
-//footer要素
-footer {
-  text-align: center;
-  top: 0;
-}
-//ここまでfooter
+//〜ここまでサービス料金〜
