@@ -1,3 +1,4 @@
+// 新規登録ページのヘッダー
 .users-header {
   height: 60px;
   padding-top: 15px;
@@ -6,10 +7,13 @@
   color:black;
   box-shadow: 5px 10px 20px rgba(0,0,0,0.25);
 }
+// 〜ここまで新規登録ページのヘッダー〜
+
+// 新規登録フォーム
 #new-body{
   background-color: rgb(228, 228, 228);
   .new {
-    height: 700px;
+    height: 650px;
     margin: 60px 100px;
     background-color: white;
     box-shadow: 5px 10px 20px rgba(19, 18, 18, 0.2);
@@ -44,3 +48,20 @@
     }
   }
 }
+// 〜ここまで新規登録フォーム〜
+
+// 新規登録失敗時
+#error_explanation {
+  color: red;
+  border-bottom: 0.5px solid red;
+  margin-bottom: 15px;
+  opacity: 0.7;
+}
+
+.field_with_errors {
+  input {
+    border: 0.1px solid red;
+    opacity: 0.7;
+  }
+}
+// 〜〜ここまで新規登録失敗時〜〜
