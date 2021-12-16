@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   def index
     redirect_to( new_user_path )
   end
@@ -11,6 +12,7 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  # 新規登録成功時はDBに保存して、showページに飛ぶ。失敗時は新規登録ページにリダイレクトする。
   def create
     @user = User.new( user_params )
     if @user.save
@@ -29,6 +31,8 @@ class UsersController < ApplicationController
         :email,
         :nickname,
         :password,
-        :password_confirmation )
+        :password_confirmation
+       )
     end
+
 end
