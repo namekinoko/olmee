@@ -1,1 +1,22 @@
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+<%# ログイン前のヘッダーとログイン後のヘッダーで分ける %>
+<nav>
+    <ul id="navi-ul">
+      <li class="site-icon"><img src="/assets/site-logo.png" alt="サイトのアイコン"></li>
+      <li><%= link_to "About", '#' %></li>
+      <li><%= link_to "お問い合わせ", '#' %></li>
+      <% if logged_in? %>
+        <li class="dropdown">
+          <%= link_to 'アカウント' '#'%>
+          <ul class="dropdown-menu">
+            <li><%= link_to "プロフィール", '#' %></li>
+            <li><%= link_to "設定", '#' %></li>
+            <li class="divider"></li>
+            <li><%= link_to "ログアウト", '#' %></li>
+          </ul>
+        </li>
+      <% else %>
+        <li><%= link_to "ログイン", login_path %></li>
+        <li><%= link_to "新規登録", new_user_path %></li>
+      <% end %>
+    </ul>
+</nav>
