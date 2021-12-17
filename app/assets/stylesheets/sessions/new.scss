@@ -10,10 +10,9 @@
 
 // ログインフォーム
 #login-body{
-  background-color: rgb(228, 228, 228);
   .login {
     height: 650px;
-    margin: 60px 100px;
+    margin: 40px 20px;
     background-color: white;
     box-shadow: 5px 10px 20px rgba(19, 18, 18, 0.2);
     .explanation {
@@ -40,17 +39,17 @@
 
     input {
       display: block;
-      padding: 5px 0;
+      width: 20em;
+      height: 3em;
       margin-top: 5px;
     }
 
     .btn {
-      border: 2px solid #000;
-      border-radius: 0;
-      background: #fff;
-      :hover {
-        color: #fff;
-        background: #000;
+      border: 1px solid #000;
+      background: rgb(19, 206, 34);
+      cursor: pointer;
+      .btn:hover {
+        background: rgb(124, 245, 26);
       }
     }
   }

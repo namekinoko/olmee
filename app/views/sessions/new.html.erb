@@ -2,7 +2,7 @@
     <%= stylesheet_link_tag 'sessions/new' %>
 <% end %>
 
-<div class="login-header">旅とも</div>
+<div class="users-header"><a href="/"><img src="/assets/site-logo.png" alt="サイトのアイコン"></a></div>
 <div id="login-body">
     <div class="login">
       <div class="explanation">
@@ -18,7 +18,7 @@
             <%= f.label :password, "パスワード" %>
             <%= f.password_field :password, class: 'form-control', placeholder: "半角英数字6文字以上"%>
 
-            <%= f.submit "ログイン", class: "btn btn-primary" %>
+            <%= f.submit "ログイン", class: "btn" %>
         <% end %>
       </div>
       <div class="has-account">
