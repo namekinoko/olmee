@@ -8,44 +8,6 @@
 }
 //〜ここまで背景画像〜
 
-img {
-  height: 30px;
-  width: 100px;
-}
-
-// 〜グローバルナビゲーション〜
-nav {
-  z-index: 50;
-  width: 100%;
-  height: 60px;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  .site-icon {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-  }
-  #navi-ul {
-    text-align: center;
-    padding-top: 15px;
-  }
-  li {
-    display: inline-block;
-    width: 10%;
-  }
-  li:hover{
-    color: #E7DA66;
-    border-bottom: 3px solid #F0E475;
-    cursor: pointer;
-  }
-  a {
-    display: block;
-    font-size: 15px;
-    color: white;
-  }
-}
-//~ここまでグローバルナビゲーション~
 
 // キャッチフレーズ
 .word {

@@ -1,7 +1,9 @@
 class SessionsController < ApplicationController
+
   def new
   end
 
+  # ログインに成功した場合ユーザープロフィールページへ。失敗した場合再度ログインページに
   def create
     user = User.find_by( email: params[:session][:email].downcase )
     if user && user.authenticate( params[:session][:password] )
@@ -13,6 +15,7 @@ class SessionsController < ApplicationController
     end
   end
 
+  # ログアウトしたらトップページに戻る
   def destroy
     log_out
     redirect_to( root_url )
