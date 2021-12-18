@@ -56,18 +56,3 @@
 }
 // 〜ここまで新規登録フォーム〜
 
-// 新規登録失敗時
-#error_explanation {
-  color: red;
-  border-bottom: 0.5px solid red;
-  margin-bottom: 15px;
-  opacity: 0.7;
-}
-
-.field_with_errors {
-  input {
-    border: 0.1px solid red;
-    opacity: 0.7;
-  }
-}
-// 〜〜ここまで新規登録失敗時〜〜

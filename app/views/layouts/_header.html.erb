@@ -11,7 +11,7 @@
           <li><%= link_to "About", '#' %></li>
           <li><%= link_to "お問い合わせ", '#' %></li>
           <% if logged_in? %>
-            <li><%= link_to "プロフィール", 'users_edit_path'%></li>
+            <li><%= link_to "プロフィール", edit_user_path( current_user ) %></li>
             <li><%= link_to "ログアウト", '#' %></li>
           <% else %>
             <li><%= link_to "ログイン", login_path %></li>

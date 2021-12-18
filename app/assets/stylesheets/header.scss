@@ -36,7 +36,7 @@ img {
         color: white;
       }
     }
-    li:not(:last-child):hover {
+    li:hover {
       border-bottom: 3px solid rgb(241, 241, 7) ;
     }
     li:first-child a {
