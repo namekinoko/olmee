@@ -1,0 +1,23 @@
+<% content_for :scss do %>
+    <%= stylesheet_link_tag 'services/main' %>
+<% end %>
+
+<%= render partial: 'layouts/header' %>
+
+<main>
+  <div class="main-wrapper">
+    <div class="search-prefecture">
+      <h1>旅行する都道府県を教えてください</h1>
+      <%= form_with url: '', method: :get, class: 'search', local: true do |f| %>
+        <%= f.text_field :keyword, class: 'search-keyword', placeholder: ' 都道府県を入力'%>
+        <%= f.button :type => 'submit', class: "btn" do %>
+        <i class='fa fa-search'></i>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="newest-wrapper">
+    <h1></h1>
+    <div class="newest-posts">ここに最新の投稿</div>
+  </div>
+</main>

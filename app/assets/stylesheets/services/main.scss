@@ -1,0 +1,33 @@
+// 都道府県検索部分
+.search-prefecture {
+  width: 100%;
+  background: linear-gradient(-135deg,#E4A972, #9941D8) fixed;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    margin-bottom: 10px;
+    color: white;
+  }
+}
+
+  .search {
+    display: flex;
+    border: none;
+    .search-keyword {
+      border-radius:25px;
+      width: 150px;
+      height: 23px;
+    }
+    .btn {
+      height: 23px;
+      width: 23px;
+      background-color: white;
+      border-radius:25px;
+    }
+    .btn:hover {
+      background-color: rgb(77, 75, 75);
+    }
+  }
