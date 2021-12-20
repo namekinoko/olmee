@@ -36,17 +36,25 @@ body {
 }
 
  /* フォーム送信失敗時 */
-#error_explanation {
-  color: red;
-  border-bottom: 0.5px solid red;
-  margin-bottom: 15px;
-  opacity: 0.7;
+.field_with_errors {
+  display: contents;
+  border: 1px solid red;
 }
 
-.field_with_errors ＞ input {
-    border: 0.1px solid red;
+#error_explanation {
+  color: red;
+  opacity: 0.7;
+  text-align: center;
+}
+
+.field_with_errors  input {
+    border: 1px solid red;
     opacity: 0.7;
-  }
+}
+
+.field_with_errors textarea {
+    border: 1px solid red;
+}
  /* 〜〜ここまでフォーム送信失敗時〜〜 */
 
 /* footer要素 */

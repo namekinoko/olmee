@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
   get '/main', to: 'services#main'
   resources :users
+  resources :contacts, only: [:new, :create, :index]
 end

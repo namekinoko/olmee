@@ -1,0 +1,54 @@
+<% provide(:title, "お問い合わせ") %>
+<% content_for :scss do %>
+    <%= stylesheet_link_tag 'contacts/new' %>
+<% end %>
+<%= render partial: 'layouts/header' %>
+
+<div id="contact-wrapper">
+  <h1>お問い合わせ</h1>
+  <%= form_with( model: @contact, local: true ) do |f| %>
+  <%= render 'shared/error_messages', model: @contact%>
+    <table class="contact-table">
+      <tr>
+         <th class="contact-items">
+            <%= f.label :name do %>
+              名前 <span>必須</span>
+            <% end %>
+         </th>
+         <td class="contact-body"><%= f.text_field :name, class: 'form-control', placeholder: '田中 太郎' %></td>
+      </tr>
+
+      <tr>
+         <th class="contact-items">
+            <%= f.label :email do %>
+              メールアドレス <span>必須</span>
+            <% end %>
+         </th>
+         <td class="contact-body"><%= f.text_field :email, class: 'form-control', placeholder: 'sample@example.com' %></td>
+      </tr>
+
+      <tr>
+         <th class="contact-items">
+            <%= f.label :subject do %>
+              件名 <span>必須</span>
+            <% end %>
+         </th>
+         <td class="contact-body"><%= f.text_field :subject, class: 'form-control', placeholder: 'サービスの使い方について' %></td>
+      </tr>
+      
+      <tr>
+         <th class="contact-items">
+            <%= f.label :message do %>
+              メッセージ <span>必須</span>
+            <% end %>
+         </th>
+         <td class="contact-body"><%= f.text_area :message, class: 'form-control', placeholder: 'サービスの使い方がわからない。' %></td>
+      </tr>
+
+    </table>
+    <div class="contact-btn">
+      <%= f.submit '入力内容確認' %>
+    </div>
+
+  <% end %>
+</div>

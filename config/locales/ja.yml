@@ -7,3 +7,8 @@ ja:
         email: メールアドレス
         password: パスワード
         password_digest: 確認
+      contact:
+        name: 名前
+        email: メールアドレス
+        subject: 件名
+        message: メッセージ
