@@ -16,6 +16,11 @@
   </head>
 
   <body>
+    <% if current_page?( login_path )  || current_page?( new_user_path ) %>
+      <%= render partial: 'layouts/header2' %>
+    <% else %>
+       <%= render partial: 'layouts/header' %>
+    <% end %>
     <%= yield %>
     <footer>
       <div class="copy-right">

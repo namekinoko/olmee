@@ -2,7 +2,7 @@
 <% content_for :scss do %>
     <%= stylesheet_link_tag 'sessions/new' %>
 <% end %>
-<div class="users-header"><a href="/"><img src="/assets/site-logo.png" alt="サイトのアイコン"></a></div>
+
 <div id="login-body">
     <div class="login">
       <div class="explanation">
@@ -22,7 +22,7 @@
         <% end %>
       </div>
       <div class="has-account">
-        <p><a href="#">新規登録はこちら</a></p>
+        <p><%= link_to "新規登録はこちら", new_user_path %></a></p>
       </div>
     </div>
     

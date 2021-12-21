@@ -1,6 +1,5 @@
-<% provide( :title, " 編集" ) %>
-<%= render partial: 'layouts/header' %>
-<h1>Update your profile</h1>
+<% provide( :title, "プロフィール編集" ) %>
+<h1>プロフィール編集</h1>
 
 <div class="edit-wrapper">
   <div class="col-md-6 col-md-offset-3">
@@ -10,16 +9,13 @@
       <%= f.label :name %>
       <%= f.text_field :name, class: 'form-control' %>
 
+      <%= f.label :nickname %>
+      <%= f.text_field :nickname, class: 'form-control' %>
+
       <%= f.label :email %>
       <%= f.email_field :email, class: 'form-control' %>
 
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
-
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation, class: 'form-control' %>
-
-      <%= f.submit "Save changes", class: "btn btn-primary" %>
+      <%= f.submit "変更する", class: "btn" %>
     <% end %>
   </div>
 </div>

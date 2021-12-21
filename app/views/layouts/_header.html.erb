@@ -12,7 +12,7 @@
           <li><%= link_to "お問い合わせ", new_contact_path %></li>
           <% if logged_in? %>
             <li><%= link_to "マイページ", user_path( current_user ) %></li>
-            <li><%= link_to "ログアウト", '#' %></li>
+            <li><%= link_to "ログアウト", logout_path( current_user ), method: :delete %></li>
           <% else %>
             <li><%= link_to "ログイン", login_path %></li>
             <li><%= link_to "新規登録", new_user_path %></li>
