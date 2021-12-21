@@ -1,4 +1,28 @@
+<% provide( :title, "マイページ" )%>
+<% content_for :scss do %>
+    <%= stylesheet_link_tag 'users/show' %>
+<% end %>
 <%= render partial: 'layouts/header' %>
-<%= flash[:success] %>
-<%= @user.name %>
- <%= @user.email %>
+
+<div class="mypage-wrapper">
+  <h1>マイページ</h1>
+  <div class="participation-event">ここに参加予定のイベント</div>
+  <div class="user-profile">
+    <table id="profile-table">
+      <caption>プロフィール</caption>
+      <tr>
+       <th class="profile-items">名前</th>
+       <td class="profile-body"><%= @user.name %></td>
+      </tr>
+      <tr>
+       <th class="profile-items">ニックネーム</th>
+       <td class="profile-body"><%= @user.nickname %></td>
+      </tr>
+      <tr>
+       <th class="profile-items">メールアドレス</th>
+       <td class="profile-body"><%= @user.email %></td>
+      </tr>
+    </table>
+    <p><%= link_to "プロフィールを編集する", edit_user_path( current_user )%></p>
+  </div>
+</div>
