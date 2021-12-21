@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     if @user.save
       log_in( @user )
       flash[:success] = "ユーザー登録に成功しました。"
-      redirect_to( @user )
+      redirect_to( services_path )
     else
       flash[:danger] = @user.errors.full_messages
       render 'new'
