@@ -30,7 +30,7 @@ module SessionsHelper
 
   # 記憶したURL（もしくはサービスページ）にリダイレクト
   def redirect_back_or_service
-    redirect_to( session[:forwarding_url] || service_url )
+    redirect_to( session[:forwarding_url] || services_url )
     session.delete( :forwarding_url )
   end
 

@@ -21,11 +21,21 @@
     <% else %>
        <%= render partial: 'layouts/header' %>
     <% end %>
+    <div class="flash">
+      <% flash.each do |key, value|%>
+        <%= content_tag(:div, value, class: key) %>
+      <% end %>
+    </div>
     <%= yield %>
     <footer>
       <div class="copy-right">
         <p>Copyright(C)2021 Hidetoshi Enoki</p>
       </div>
     </footer>
+    <script>
+      $(function() {
+        setTimeout("$('.flash').fadeOut('slow')", 2000);
+      });
+    </script>
   </body>
 </html>
