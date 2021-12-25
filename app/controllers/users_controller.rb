@@ -18,16 +18,16 @@ class UsersController < ApplicationController
   def create
     @user = User.new( user_params )
     if @user.save
-      log_in( @user )
-      flash[:success] = "ユーザー登録に成功しました。"
-      redirect_to( services_path )
+      UserMailer.account_activation( @user ).deliver_now
+      flash[:info] = "アカウント認証のため、メールをお送りしましたのでご確認お願いします。"
+      redirect_to( root_url )
     else
       flash[:danger] = @user.errors.full_messages
       render 'new'
     end
   end
 
-  # ユーザーのプロフィールページへ
+  # ユーザーのプロフィールページ
   def edit 
     @user = User.find( params[:id] )
   end

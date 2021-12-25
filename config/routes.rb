@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :users
   resources :contacts, only: [:new, :create, :index]
   resources :services
+  resources :account_activations, only: [:edit]
 end
