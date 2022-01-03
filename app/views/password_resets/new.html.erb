@@ -1,0 +1,15 @@
+<% provide(:title, "パスワード再設定手続き") %>
+<% content_for :scss do %>
+    <%= stylesheet_link_tag 'password_resets/new' %>
+<% end %>
+<h1>パスワード再設定手続き</h1>
+<p>パスワードをお忘れの方は、アカウント登録時のメールアドレスを入力してください。</p>
+
+<div class="reset-wrapper">
+    <%= form_with( url: password_resets_path, scope: :password_reset, local: true ) do |f| %>
+
+      <%= f.email_field :email, placeholder: "example@ex.com" %>
+
+      <%= f.submit "送信", class: "btn" %>
+    <% end %>
+</div>

@@ -5,9 +5,8 @@ class UserMailer < ApplicationMailer
     mail to: user.email, subject: "Olmeeアカウント認証"
   end
 # ユーザーがパスワードを忘れた時に送る
-  def password_reset
-    @greeting = "Hi"
-
-    mail to: "to@example.org"
+  def password_reset( user )
+    @user = user
+    mail to: user.email, subject: "パスワード再設定 | Olmee(オルミー)"
   end
 end

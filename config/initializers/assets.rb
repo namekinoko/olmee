@@ -19,4 +19,7 @@ Rails.application.config.assets.precompile += %w(
   sessions/new.css
   services/index.css
   contacts/new.css
+  password_resets/new.css
+  password_resets/edit.css
+
 )

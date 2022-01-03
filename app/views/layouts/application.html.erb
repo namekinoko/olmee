@@ -21,11 +21,14 @@
     <% else %>
        <%= render partial: 'layouts/header' %>
     <% end %>
+
+    <% if !flash.empty? %>
     <div class="flash">
       <% flash.each do |key, value|%>
         <%= content_tag(:div, value, class: key) %>
       <% end %>
     </div>
+    <% end %>
     <%= yield %>
     <footer>
       <div class="copy-right">
