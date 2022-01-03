@@ -1,7 +1,5 @@
 <% provide( :title, "サービス" )%>
-<% content_for :scss do %>
-    <%= stylesheet_link_tag 'services/index' %>
-<% end %>
+  <%= stylesheet_link_tag 'services/index', :media => "all" %>
 
 <main>
   <div class="main-wrapper">

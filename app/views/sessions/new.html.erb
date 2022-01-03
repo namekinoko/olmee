@@ -1,7 +1,5 @@
 <% provide( :title, "ログイン" )%>
-<% content_for :scss do %>
-    <%= stylesheet_link_tag 'sessions/new' %>
-<% end %>
+<%= stylesheet_link_tag 'sessions/new', :media => "all" %>
 
 <div id="login-body">
     <div class="login">

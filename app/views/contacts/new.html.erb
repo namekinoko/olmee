@@ -1,7 +1,5 @@
 <% provide( :title, "お問い合わせ" ) %>
-<% content_for :scss do %>
-    <%= stylesheet_link_tag 'contacts/new' %>
-<% end %>
+<%= stylesheet_link_tag "contacts/new", :media => "all" %>
 
 <div id="contact-wrapper">
   <h1>お問い合わせ</h1>

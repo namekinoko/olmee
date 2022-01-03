@@ -1,7 +1,5 @@
 <% provide(:title, "パスワード再設定手続き") %>
-<% content_for :scss do %>
-    <%= stylesheet_link_tag 'password_resets/new' %>
-<% end %>
+<%= stylesheet_link_tag "password_resets/new", :media => "all" %>
 <h1>パスワード再設定手続き</h1>
 <p>パスワードをお忘れの方は、アカウント登録時のメールアドレスを入力してください。</p>
 

@@ -1,7 +1,5 @@
 <% provide( :title, "マイページ" )%>
-<% content_for :scss do %>
-    <%= stylesheet_link_tag 'users/show' %>
-<% end %>
+<%= stylesheet_link_tag 'users/show', :media => "all" %>
 
 <div class="mypage-wrapper">
   <h1>マイページ</h1>
