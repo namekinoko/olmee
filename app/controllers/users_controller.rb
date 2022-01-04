@@ -22,7 +22,6 @@ class UsersController < ApplicationController
       flash[:info] = "アカウント認証のため、メールをお送りしましたのでご確認お願いします。"
       redirect_to( root_url )
     else
-      flash[:danger] = @user.errors.full_messages
       render 'new'
     end
   end

@@ -1,49 +1,70 @@
-// 新規登録フォーム
-#new-body{
-  // background-color: rgb(228, 228, 228);
-  .new {
-    height: 650px;
-    margin: 40px 20px;
-    background-color: white;
-    box-shadow: 5px 10px 20px rgba(19, 18, 18, 0.2);
-    .explanation {
-      border-bottom: 6px double rgb(19, 206, 34);
-      text-align: right;
-      h1 {
-        font-size: 3em;
-        text-align: center;
-        padding: 20px 0;
-      }
-      p {
-        font-size: 1em;
-        span {
-          color: red;
-        }
-      }
-    }
-    .form-wrapper {
-      padding-top: 30px;
-      display: flex;
-      justify-content: center;
-    }
-    input {
-      display: block;
-      width: 20em;
-      height: 3em;
-      margin-top: 5px;
-    }
-    .btn {
-      border: 1px solid #000;
-      background: rgb(19, 206, 34);
-      cursor: pointer;
-    }
-    .btn:hover {
-        background: rgb(124, 245, 26);
-    }
-  }
-  .has-account {
+// ~新規登録ページ上の文章~
+.explanation {
+  h1 {
+    font-size: 3.3em;
     text-align: center;
+    padding-bottom: 30px;
+    margin: 30px 0;
   }
+  p {
+    text-align: center;
+    font-size: 1.2em;
+    span {
+      color: red;
+    }
+  }
+}
+// ~新規登録ページ上の文章~
+
+// 新規登録フォーム
+.form-wrapper {
+  .new-table {
+    margin: 0 auto;
+    width: 800px;
+    .new-body {
+      padding: 20px;
+      input {
+        width: 200px;
+        height: 2em;
+        border: none;
+        border-bottom: 1px solid black;
+      }
+      .field_with_errors > input {
+        border: 1px solid red;
+        opacity: 0.7;
+    }
+    }
+    .new-items {
+      text-align: left;
+      width: 300px;
+      font-size: 1.3em;
+      border-right: 1px solid #ccc;
+      span {
+        color: white;
+        background-color: red;
+      }
+    }
+  }
+  .new-btn {
+    text-align: center;
+    padding: 30px;
+  }
+  .new-btn > input {
+    cursor: pointer;
+    width: 30%;
+    height: 4em;
+    background-color: aliceblue;
+    &:hover {
+      background-color: rgb(221, 237, 250);
+    }
+  }
+
 }
 // 〜ここまで新規登録フォーム〜
 
+
+// アカウントをお持ちの場合
+.has-account {
+  text-align: center;
+}
+// 〜ここまでアカウントをお持ちの場合〜
