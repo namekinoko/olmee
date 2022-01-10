@@ -11,6 +11,7 @@
           <li><%= link_to "About", '#' %></li>
           <li><%= link_to "お問い合わせ", new_contact_path %></li>
           <% if logged_in? %>
+            <li><%= link_to "投稿", new_post_path %></li>
             <li><%= link_to "マイページ", user_path( current_user ) %></li>
             <li><%= link_to "ログアウト", logout_path( current_user ), method: :delete %></li>
           <% else %>

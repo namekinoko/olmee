@@ -16,5 +16,9 @@
   <div class="newest-wrapper">
     <h1></h1>
     <div class="newest-posts">ここに最新の投稿</div>
+    <% @posts.each do |post| %>
+    <p>タイトル</p>
+    <span><%= post.number %></span>
+    <% end %>
   </div>
 </main>
