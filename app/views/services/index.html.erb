@@ -16,9 +16,9 @@
   <div class="newest-wrapper">
     <h1></h1>
     <div class="newest-posts">ここに最新の投稿</div>
-    <% @posts.each do |post| %>
+    <% @groups.each do |group| %>
     <p>タイトル</p>
-    <span><%= post.number %></span>
+    <span><%= group.user.nickname %></span>
     <% end %>
   </div>
 </main>

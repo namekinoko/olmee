@@ -1,21 +1,21 @@
-class PostsController < ApplicationController
+class GroupsController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy]
 
   def index
-    redirect_to( new_post_path )
+    redirect_to( new_group_path )
   end
 
   def new
-    @post = Post.new
+    @group = Group.new
   end
 
   def edit
   end
 
   def create 
-    @post = current_user.posts.build( post_params ) 
-    if @post.save
-      flash[:success] = "投稿に成功しました"
+    @group = current_user.groups.build( group_params ) 
+    if @group.save
+      flash[:success] = "募集を開始しました"
       redirect_to( services_url )
     else
       render  'new'
@@ -26,8 +26,8 @@ class PostsController < ApplicationController
   end
 
   private
-    def post_params
-      params.require( :post ).permit(
+    def group_params
+      params.require( :group ).permit(
         :date,
         :prefecture,
         :municipality,

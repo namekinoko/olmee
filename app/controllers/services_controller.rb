@@ -1,7 +1,7 @@
 class ServicesController < ApplicationController
   before_action :logged_in_user, only: [:index]
   def index
-    @posts = Post.all
+    @groups = Group.all
   end
 
   def show
