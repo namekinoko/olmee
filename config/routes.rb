@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   resources :services
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
-  resources :groups, only: [:index, :new, :create, :destroy, :edit]
+  resources :groups
 end

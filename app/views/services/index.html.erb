@@ -18,7 +18,8 @@
     <div class="newest-posts">ここに最新の投稿</div>
     <% @groups.each do |group| %>
     <p>タイトル</p>
-    <span><%= group.user.nickname %></span>
+    <span><%= group.user_id %></span>
+    <%= link_to group.number, edit_group_path( group.id )%>
     <% end %>
   </div>
 </main>
