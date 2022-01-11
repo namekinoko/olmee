@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   include SessionsHelper
+  include GroupsHelper
 
   private
     # ログイン済みユーザーかどうか確認
@@ -10,5 +11,5 @@ class ApplicationController < ActionController::Base
         redirect_to( login_url )
       end
     end
-    
+
 end

@@ -5,10 +5,16 @@ Rails.application.routes.draw do
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
+  
   resources :users
   resources :contacts, only: [:new, :create, :index]
   resources :services
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
-  resources :groups
+  resources :groups do
+    member do
+      get :join
+    end
+  end
+  
 end

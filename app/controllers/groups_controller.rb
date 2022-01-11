@@ -18,7 +18,8 @@ class GroupsController < ApplicationController
   end
 
   def create 
-    @group = current_user.groups.build( group_params ) 
+    @group = Group.new( group_params ) 
+    @group.user_id = current_user.id
     @group.users << current_user
     if @group.save
       flash[:success] = "募集を開始しました"
@@ -40,7 +41,14 @@ class GroupsController < ApplicationController
     end
   end
 
-  
+  # グループに参加する処理 
+  def join
+    @group = Group.find_by(id: params[:id])
+    if !@group.users.include?( current_user )
+      @group.users << current_user
+      redirect_to( services_url )
+    end
+  end
 
   private
     def group_params
