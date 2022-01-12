@@ -20,11 +20,12 @@
     <p>タイトル</p>
       <% if user_joined_group?( current_user, group )%>
       <span><%= group.user_id %></span>
-      <%= link_to group.number, edit_group_path( group.id )%>
+      <%= link_to group.number, edit_group_path( group )%>
       <%= group.users.count %>
       <p>参加済み</p>
+      <%= link_to 'キャンセル', cancel_group_path( group ) %>
       <% else %>
-      <%= link_to '参加', join_group_path(group) %>
+      <%= link_to '参加', join_group_path( group ) %>
       <% end %>
     <% end %>
   </div>

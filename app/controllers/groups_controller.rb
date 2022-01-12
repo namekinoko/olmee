@@ -50,6 +50,13 @@ class GroupsController < ApplicationController
     end
   end
 
+  # グループ参加を取り消す処理
+  def cancel
+    @group = Group.find_by( id: params[:id] )
+    @group.users.delete( current_user )
+    redirect_to( services_url )
+  end
+
   private
     def group_params
       params.require( :group ).permit(
