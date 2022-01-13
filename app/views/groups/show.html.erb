@@ -1,0 +1,55 @@
+<%= stylesheet_link_tag 'groups/show', :media => "all" %>
+<% provide( :title, "募集詳細" )%>
+<% if user_joined_group?( current_user, @group ) && @group.user_id != current_user.id %>
+  <h1>募集詳細(<span>参加済み</span>)</h1>
+<% else %>
+  <h1>募集詳細</h1>
+<% end %>
+<div id="detail-group">
+  <table>
+    <tr>
+      <th>都道府県</th>
+      <td><%= @group.prefecture %></td>
+    </tr>
+    <tr>
+      <th>市町村</th>
+      <td><%= @group.municipality %></td>
+    </tr>
+    <tr>
+      <th>旅の目的</th>
+      <td><%= @group.purpose %></td>
+    </tr>
+    <tr>
+      <th>募集人数</th>
+      <td><%= @group.number %></td>
+    </tr>
+    <tr>
+      <th>現在の人数</th>
+      <td><%= @group.users.count-1 %></td>
+    </tr>
+    <tr>
+      <th>内容</th>
+      <td><%= @group.content %></td>
+    </tr>
+  </table>
+</div>
+
+<div class="btn-menu">
+  <div id="member-menu">
+    <% if user_joined_group?( current_user, @group ) && @group.user_id != current_user.id %>
+        <%= link_to cancel_group_path( @group ),data:{confirm: '本当に参加をキャンセルしますか？'} do %>
+        <button class="btn">キャンセル</button>
+      <% end %>
+    <% elsif @group.user_id != current_user.id %>
+      <%= link_to join_group_path( @group ) do %>
+        <button class="btn">参加する</button>
+      <% end %>
+    <% end %>
+  </div>
+  <div id="host-menu">
+    <% if @group.user_id == current_user.id %>
+        <%= link_to "編集", edit_group_path( @group )%> ｜
+        <%= link_to "削除", group_path( @group ), method: :delete, data:{confirm: '本当に募集を中止しますか？'}, class: "delete"%>
+    <% end %>
+  </div>
+</div>

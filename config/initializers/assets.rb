@@ -21,5 +21,5 @@ Rails.application.config.assets.precompile += %w(
   contacts/new.css
   password_resets/new.css
   password_resets/edit.css
-
+  groups/show.css
 )
