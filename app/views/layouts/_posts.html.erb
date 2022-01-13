@@ -1,0 +1,42 @@
+<%= stylesheet_link_tag 'post', :media => "all" %>
+
+<div class="posts">
+  <% @groups.each do |group| %>
+    <div class="post">
+      <div class="detail">
+        <%= link_to group_path( group ) do %>
+          <i class="fa fa-search-plus fa-lg"></i> 
+        <% end %>
+      </div>
+      <div class="place date">
+        <h2><%= group.prefecture %></h2>
+        <h3><%= group.municipality %></h3>
+        <p>予定日 <%= group.date.strftime("%Y年 %m月 %d日") %></p>
+      </div>
+      <div class="purpose">
+        <h3>旅の目的</h3>
+        <p><%= group.purpose %></p>
+      </div>
+      <div class="number">
+        <p>募集人数　</p>
+        <%= group.number %>人
+        <p>　現在の人数　</p>
+        <%= group.users.count-1 %>人
+      </div>
+      <div id="member-menu">
+        <% if user_joined_group?( current_user, group ) && group.user_id != current_user.id %>
+          <p>参加済み</p>
+          <%= link_to 'キャンセル', cancel_group_path( group ),data:{confirm: '本当に参加をキャンセルしますか？'} %>
+        <% elsif group.user_id != current_user.id %>
+          <%= link_to '参加する', join_group_path( group )%>
+        <% end %>
+      </div>
+      <div id="host-menu">
+        <% if group.user_id == current_user.id %>
+            <%= link_to "編集", edit_group_path( group )%>
+            <%= link_to "削除", group_path( group ), method: :delete, data:{confirm: '本当に募集を中止しますか？'}, class: "delete"%>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -2,20 +2,24 @@
 <%= render 'shared/error_messages', model: @group %>
 
 <p><%= f.label :date %><br>
-<%= f.date_field :date %> #titleの入力フォーム生成
+<%= f.date_field :date %>
 </p>
 
 <p><%= f.label :prefecture %><br>
-<%= f.text_area :prefecture %> #bodyの入力フォーム生成
+<%= f.text_field :prefecture %> 
 </p>
 <p><%= f.label :municipality %><br>
-<%= f.text_area :municipality %> #bodyの入力フォーム生成
+<%= f.text_field :municipality %> 
+</p>
+<p>
+<%= f.label :purpose%><br>
+<%= f.text_field :purpose %> 
 </p>
 <p><%= f.label :content %><br>
-<%= f.text_field :content %> #bodyの入力フォーム生成
+<%= f.text_field :content %> 
 </p>
 <p><%= f.label :number %><br>
-<%= f.number_field :number %> #bodyの入力フォーム生成
+<%= f.number_field :number %>
 </p>
 
 <p><%= f.submit %> #送信ボタンを生成

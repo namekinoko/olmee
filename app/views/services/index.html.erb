@@ -14,22 +14,7 @@
     </div>
   </div>
   <div class="newest-wrapper">
-    <h1></h1>
     <div class="newest-posts">ここに最新の投稿</div>
-    <% @groups.each do |group| %>
-    <p>タイトル</p>
-      <% if user_joined_group?( current_user, group )%>
-      <span><%= group.user_id %></span>
-      <%= link_to group.number, edit_group_path( group )%>
-      <%= group.users.count %>
-      <p>参加済み</p>
-      <%= link_to 'キャンセル', cancel_group_path( group ) %>
-      <% else %>
-      <%= link_to '参加', join_group_path( group ) %>
-      <% end %>
-      <% if group.user_id == current_user.id %>
-        <%= link_to "sakujyo", group_path( group ), method: :delete%>
-        <% end %>
-    <% end %>
+    <%= render partial: 'layouts/posts', model: @group %>
   </div>
 </main>

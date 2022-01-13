@@ -74,6 +74,7 @@ class GroupsController < ApplicationController
         :date,
         :prefecture,
         :municipality,
+        :purpose,
         :content,
         :number
       )
