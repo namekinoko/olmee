@@ -5,20 +5,23 @@
 <%# ログイン前のヘッダーとログイン後のヘッダーで分ける %>
 <header>
   <img src="/assets/site-logo.png" alt="Olmee(オルミー）のサイトアイコン">
-  <nav class="gnav">
-    <div class="gnav-wrapper">
-        <ul>
-          <li><%= link_to "About", '#' %></li>
-          <li><%= link_to "お問い合わせ", new_contact_path %></li>
-          <% if logged_in? %>
-            <li><%= link_to "募集", new_group_path %></li>
-            <li><%= link_to "マイページ", user_path( current_user ) %></li>
-            <li><%= link_to "ログアウト", logout_path( current_user ), method: :delete %></li>
-          <% else %>
-            <li><%= link_to "ログイン", login_path %></li>
-            <li><%= link_to "新規登録", new_user_path %></li>
-          <% end %>
-        </ul>
-     </div>
-    </nav>
+  <p class="btn-gnav">
+    <span></span>
+    <span></span>
+    <span></span>
+  </p>
+  <nav id="gnav">
+      <ul class="gnav-menu">
+        <li><%= link_to "About", '#' %></li>
+        <li><%= link_to "お問い合わせ", new_contact_path %></li>
+        <% if logged_in? %>
+          <li><%= link_to "募集", new_group_path %></li>
+          <li><%= link_to "マイページ", user_path( current_user ) %></li>
+          <li><%= link_to "ログアウト", logout_path( current_user ), method: :delete %></li>
+        <% else %>
+          <li><%= link_to "ログイン", login_path %></li>
+          <li><%= link_to "新規登録", new_user_path %></li>
+        <% end %>
+      </ul>
+   </nav>
 </header>
