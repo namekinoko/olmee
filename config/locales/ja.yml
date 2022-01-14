@@ -12,3 +12,10 @@ ja:
         email: メールアドレス
         subject: 件名
         message: メッセージ
+      group:
+        date: 日時
+        prefecture: 都道府県
+        municipality: 市町村
+        purpose: 旅の目的
+        number: 募集人数
+        content: 詳しい内容
