@@ -1,0 +1,40 @@
+<%= stylesheet_link_tag 'groups/form', :media => "all" %>
+<div id="group-form">
+  <%= form_with model: @group, local: true do |f| %>
+    <%= render 'shared/error_messages', model: @group %>
+
+    <table>
+    <tr>
+      <th>日時<span>必須</span></th>
+      <td><%= f.date_field :date %><p>※カレンダーマークをタップしてください<p></td>
+    </tr>
+    <tr>
+      <th>都道府県<span>必須</span></th>
+      <td><%= f.text_field :prefecture %></td>
+    </tr>
+    <tr>
+      <th>市町村</th>
+      <td><%= f.text_field :municipality %></td>
+    </tr>
+    <tr>
+      <th>旅の目的<span>必須</span></th>
+      <td><%= f.text_field :purpose %></td>
+    </tr>
+    <tr>
+      <th>募集人数<span>必須</span></th>
+      <td><%= f.number_field :number %>人</td>
+    </tr>
+    <tr>
+      <th>内容</th>
+      <td><%= f.text_area :content %></td>
+    </tr>
+  </table>
+  <div class="btn-menu">
+    <% if current_page?( new_group_path )%>
+      <%= f.submit "募集する", class: "btn"%>
+    <% else %>
+      <%= f.submit "変更する", class: "btn"%>
+    <% end %>
+  </div>
+  <% end %>
+</div>

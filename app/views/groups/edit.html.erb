@@ -1,24 +1,3 @@
-<%= form_with model: @group, local: true do |f| %>
-<%= render 'shared/error_messages', model: @group %>
-
-<p><%= f.label :date %><br>
-<%= f.date_field :date %> #titleの入力フォーム生成
-</p>
-
-<p><%= f.label :prefecture %><br>
-<%= f.text_area :prefecture %> #bodyの入力フォーム生成
-</p>
-<p><%= f.label :municipality %><br>
-<%= f.text_area :municipality %> #bodyの入力フォーム生成
-</p>
-<p><%= f.label :content %><br>
-<%= f.text_field :content %> #bodyの入力フォーム生成
-</p>
-<p><%= f.label :number %><br>
-<%= f.number_field :number %> #bodyの入力フォーム生成
-</p>
-
-<p><%= f.submit %> #送信ボタンを生成
-</p>
-
-<% end %>
+<% provide( :title, "募集内容の編集" )%>
+<h1>募集内容編集</h1>
+<%= render partial: 'layouts/group_form' %>
