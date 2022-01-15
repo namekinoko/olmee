@@ -7,12 +7,16 @@
       <h1>旅行する都道府県を教えてください</h1>
       <%= form_with  method: :get, class: 'search', local: true do |f| %>
         <%= f.text_field :keyword, class: 'keyword', placeholder: ' 都道府県を入力'%>
-        <%= f.submit "検索" %>
+        <%= f.button :type => 'submit', class: "btn" , name: nil do %>
+        <i class='fa fa-search'></i>
+        <% end %>
+      <% end %>
+      <% if params[:keyword] != nil %>
+        <%= link_to "募集一覧に戻る", services_path %>
       <% end %>
     </div>
   </div>
-  <div class="newest-wrapper">
-    <div class="newest-posts">ここに最新の投稿</div>
-    <%= render partial: 'layouts/posts', model: @group %>
+  <div id="newest-posts">
+      <%= render partial: 'layouts/posts', model: @group %>
   </div>
 </main>
