@@ -5,11 +5,9 @@
   <div class="main-wrapper">
     <div class="search-prefecture">
       <h1>旅行する都道府県を教えてください</h1>
-      <%= form_with url: '', method: :get, class: 'search', local: true do |f| %>
-        <%= f.text_field :keyword, class: 'search-keyword', placeholder: ' 都道府県を入力'%>
-        <%= f.button :type => 'submit', class: "btn" do %>
-        <i class='fa fa-search'></i>
-        <% end %>
+      <%= form_with  method: :get, class: 'search', local: true do |f| %>
+        <%= f.text_field :keyword, class: 'keyword', placeholder: ' 都道府県を入力'%>
+        <%= f.submit "検索" %>
       <% end %>
     </div>
   </div>
