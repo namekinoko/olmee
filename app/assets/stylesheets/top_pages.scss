@@ -1,21 +1,39 @@
+// body {
+//   animation: fadeIn 4s linear;
+//   width: 100%;
+// }
 //背景画像
 .top-wrapper {
-  background-image: url(/assets/top_page.jpg);
+  background-image: url(/assets/main.jpg) ;
   background-size: cover;
-  height: 1000px;
+  height: 600px;
   width: 100%;
   position: relative;
 }
 //〜ここまで背景画像〜
 
 
-// キャッチフレーズ
+// キャッチフレーズと写真のクレジット
 .word {
   z-index: 40;
-  text-align: left;
-  padding-top: 8vh;
-  .catchphrase {
-    font-size: 7vw;
+  #catchphrase {
+    position: absolute;
+    top: 40%;
+    left: 200px;
+    font-size: 7rem;
+  }
+  #olmee {
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: 2s;
+    animation-delay: 7s;
+    animation-fill-mode:forwards;
+    position: absolute;
+    top: 40%;
+
+    left: 200px;
+    font-size: 7rem;
+    color: rgb(255, 255, 255);
   }
   a {
     color: white;
@@ -72,3 +90,20 @@
   }
 }
 //〜ここまでサービス料金〜
+
+// 
+#catchphrase span{
+  opacity: 0;
+}
+#catchphrase.appeartext span{
+  animation: fadeIn 4.9s linear;
+}
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@keyframes load_all_on {
+  0% { opacity: 0;}
+  100% {opacity: 1;}
+}

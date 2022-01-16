@@ -1,37 +1,47 @@
-h1 {
-  font-size: 3.3em;
-  text-align: center;
-  padding-bottom: 30px;
-  margin: 30px 0;
-}
 // 問い合わせフォーム
 #contact-wrapper {
+  h1 {
+    font-size: 3.3em;
+    text-align: center;
+    padding-bottom: 30px;
+    margin: 30px 0;
+    text-decoration: underline;
+  }
   .contact-table {
-    margin: 0 auto;
-    width: 800px;
+    margin: auto;
+    width: 80%;
     .contact-body {
-      padding: 20px;
+      padding: 30px;
+      width: 20%;
       input {
         width: 200px;
         height: 2em;
         border: none;
         border-bottom: 1px solid black;
       }
+      input[type="text"]:focus {
+        outline: none;
+        border-bottom: 1px solid blue;
+      }
       textarea {
         height: 100px;
-        width: 300px;
+        width: 200px;
       }
       .field_with_errors > input {
         border: 1px solid red;
         opacity: 0.7;
-    }
+      }
     }
     .contact-items {
       text-align: left;
-      width: 300px;
-      font-size: 1.3em;
+      width: 20%;
+      font-size: 1.5em;
       border-right: 1px solid #ccc;
+      position: relative;
       span {
+        position: absolute;
+        right: 0;
+        margin-right: 5px;
         color: white;
         background-color: red;
       }
@@ -54,3 +64,26 @@ h1 {
 }
 
 // 〜ここまで問い合わせフォーム〜
+
+// レスポンシブ対応
+@media all and ( max-width: 767px ) {
+  #contact-wrapper {
+    h1 {
+      font-size: 2.3rem;
+    }
+    .contact-table .contact-body ,
+    .contact-table .contact-items {
+      border: none;
+      width: 100%;
+      display: block;
+      text-align: center;
+    }
+    .contact-items {
+      text-decoration: underline;
+      span {
+        background-color: aqua;
+      }
+    }
+  }
+}
+// 〜レスポンシブ対応〜

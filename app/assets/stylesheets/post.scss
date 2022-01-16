@@ -1,3 +1,4 @@
+// グループ募集一覧
 .posts {
   display: flex;
   justify-content: space-between;
@@ -51,4 +52,12 @@
   display: block;
   width: 31%;
   height: 0;
+}
+// 〜ここまでグループ募集一覧〜
+@media screen and (max-width: 600px){ 
+  .posts {
+    .post {
+      width: 45%;
+    }
+  }
 }
