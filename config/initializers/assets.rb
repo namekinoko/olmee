@@ -23,4 +23,5 @@ Rails.application.config.assets.precompile += %w(
   password_resets/edit.css
   groups/show.css
   groups/form.css
+  chats/messages.css
 )

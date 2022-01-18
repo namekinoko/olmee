@@ -1,0 +1,12 @@
+<% if @chats.nil? %>
+<% else%>
+<% @chats.each do |chat|%>
+<% end %>
+  <%= chat.message %>
+<% end %>
+
+
+<%= form_with model: @chat, url: chats_path do |f| %>
+  <%= f.text_field :message %>
+  <%= f.submit %>
+<% end %>

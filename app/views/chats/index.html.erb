@@ -1,0 +1,10 @@
+<% provide( :title, "グループチャット" )%>
+<h1>グループチャット</h1>
+<div id="chats">
+<%= render partial: 'layouts/messages' , model: @chats %>
+  <%= form_with model: [@group, @chat] do |f| %>
+    <%= f.text_field :message %>
+    <%= f.hidden_field :group_id, value: @group.id %>
+    <%= f.submit "コメントする" %>
+  <% end %>
+</div>

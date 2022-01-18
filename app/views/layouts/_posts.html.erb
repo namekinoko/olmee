@@ -27,6 +27,7 @@
         <% if user_joined_group?( current_user, group ) && group.user_id != current_user.id %>
           <p>参加済み</p>
           <%= link_to 'キャンセル', cancel_group_path( group ),data:{confirm: '本当に参加をキャンセルしますか？'} %>
+          <%= link_to 'チャット', group_chats_path( group ) %>
         <% elsif group.user_id != current_user.id %>
           <%= link_to '参加する', join_group_path( group )%>
         <% end %>

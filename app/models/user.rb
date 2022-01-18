@@ -2,6 +2,7 @@ class User < ApplicationRecord
   attr_accessor :remember_token, :activation_token, :reset_token
   has_many :group_users
   has_many :groups, dependent: :destroy, through: :group_users
+  has_many :chats
   before_save   :downcase_email
   before_create :create_activation_digest
 

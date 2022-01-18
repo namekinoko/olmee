@@ -3,6 +3,7 @@ class ContactsController < ApplicationController
   def index
     redirect_to new_contact_path
   end
+  
   def new
     @contact = Contact.new
   end

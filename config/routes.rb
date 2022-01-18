@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
+  root 'top_pages#index'
   get 'password_resets/new'
   get 'password_resets/edit'
-  root 'top_pages#index'
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
   resources :groups do
+    resources :chats, only: [:index, :create]
     member do
       get :join
       get :cancel
