@@ -16,7 +16,10 @@ class ChatsController < ApplicationController
     if @message.save
       respond_to do |format|
         format.html { redirect_to group_chats_path( @group ) }
-        format.json { render json: @message }
+        format.json { render json: { "new_chat" => @message,
+                                     "current_user_id" => current_user.id
+                                    } 
+                    }
       end
     else
       redirect_to group_chats_path( @group )

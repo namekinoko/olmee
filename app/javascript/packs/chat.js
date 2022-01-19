@@ -15,9 +15,14 @@ document.addEventListener('turbolinks:load', () => {
         contentType: false
       })
       .done(function(data){
+        console.log(data)
         $('.input-message').val('');
         $('.submit-message').prop('disabled', false);
-        $('#messages').append(`<p class="user-name">自分</p><p class="message">${data.message}</p>`);
+        if( data.new_chat.user_id == data.current_user_id ){
+          $('#messages').append(`<p class="user-name">自分</p><p class="message">${data.new_chat.message}</p>`).addClass('right-side');
+        }else{
+          $('#messages').append(`<p class="user-name">自分</p><p class="message">${data.new_chat.message}</p>`).addClass('left-side');
+        }
       })
       .fail(function(){
         $('.input-message').val('');
