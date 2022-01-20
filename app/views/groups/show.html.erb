@@ -53,9 +53,9 @@
     <% if @group.user_id == current_user.id %>
         <p><%= link_to "編集", edit_group_path( @group )%> ｜
         <%= link_to "削除", group_path( @group ), method: :delete, data:{confirm: '本当に募集を中止しますか？'}, class: "delete"%></p>
-    <% end %>
-    <%= link_to group_chats_path( @group ) do %>
-          <button class="btn join-chat">チャット</button>
+        <%= link_to group_chats_path( @group ) do %>
+              <button class="btn join-chat">チャット</button>
+        <% end %>
     <% end %>
   </div>
 </div>

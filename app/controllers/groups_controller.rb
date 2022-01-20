@@ -56,7 +56,7 @@ class GroupsController < ApplicationController
     if !@group.users.include?( current_user )
       @group.users << current_user
       flash[:success] = "募集に参加しました"
-      if ( controller_path == 'services' && action_name == 'index')
+      if ( request.referer&.include?( '/services' ) )
         redirect_to( services_url )
       else
         redirect_to  group_path( @group )
@@ -69,7 +69,7 @@ class GroupsController < ApplicationController
     @group = Group.find_by( id: params[:id] )
     @group.users.delete( current_user )
     flash[:success] = "参加を取り消しました"
-    if ( controller_path == 'services' && action_name == 'index')
+    if ( request.referer&.include?( '/services' ) )
       redirect_to( services_url )
     else
       redirect_to  group_path( @group )
