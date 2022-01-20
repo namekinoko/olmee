@@ -19,15 +19,15 @@ document.addEventListener('turbolinks:load', () => {
         $('.input-message').val('');
         $('.submit-message').prop('disabled', false);
         if( data.new_chat.user_id == data.current_user_id ){
-          $('#messages').append(`<p class="user-name">自分</p><p class="message">${data.new_chat.message}</p>`).addClass('right-side');
+          $('#messages').append(`<div class="right-side"><p class="user-name">自分</p><p class="message">${data.new_chat.message}</p></div>`);
         }else{
-          $('#messages').append(`<p class="user-name">${data.current_user_nickname}</p><p class="message">${data.new_chat.message}</p>`).addClass('left-side');
+          $('#messages').append(`<div class="left-side"><p class="user-name">${data.current_user_nickname}</p><p class="message">${data.new_chat.message}</p></div>`);
         }
       })
       .fail(function(){
         $('.input-message').val('');
         $('.submit-message').prop('disabled', false);
-        $('#messages').append(`<p class="message">メッセージの送信に失敗しました</p>`).addClass('right-side');
+        alert('メッセージの送信に失敗しました')
       })
     });
   });

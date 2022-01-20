@@ -1,12 +1,11 @@
 <% provide( :title, "グループチャット" )%>
-<h1>グループチャット</h1>
 <div id="chats">
   <div id="messages">
     <%= render partial: 'layouts/messages' , model: @chats %>
   </div>
-  <%= form_with model: [@group, @message], id: "new-message" do |f| %>
-      <%= f.text_field :message, class: 'input-message' %>
-      <%= f.hidden_field :group_id, value: @group.id %>
-      <%= f.submit "コメントする" , class: "submit-message"%>
-  <% end %>
 </div>
+  <%= form_with model: [@group, @message], id: "new-message" do |f| %>
+      <p class="input-message"><%= f.text_field :message, class: 'input-message' %></p>
+      <%= f.hidden_field :group_id, value: @group.id %>
+      <p class="submit-message"><%= f.submit "コメントする" , class: "submit-message"%></p>
+  <% end %>
