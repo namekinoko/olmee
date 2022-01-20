@@ -40,6 +40,12 @@ table {
     width: 15%;
     padding: 10px;
   }
+  .join-chat {
+    background-color: aliceblue;
+    &:hover {
+      background-color: rgb(210, 218, 226);
+    }
+  }
 }
 
 // レスポンシブデザイン対応

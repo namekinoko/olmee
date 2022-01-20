@@ -21,7 +21,7 @@ document.addEventListener('turbolinks:load', () => {
         if( data.new_chat.user_id == data.current_user_id ){
           $('#messages').append(`<p class="user-name">自分</p><p class="message">${data.new_chat.message}</p>`).addClass('right-side');
         }else{
-          $('#messages').append(`<p class="user-name">自分</p><p class="message">${data.new_chat.message}</p>`).addClass('left-side');
+          $('#messages').append(`<p class="user-name">${data.current_user_nickname}</p><p class="message">${data.new_chat.message}</p>`).addClass('left-side');
         }
       })
       .fail(function(){

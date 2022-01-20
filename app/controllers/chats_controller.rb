@@ -17,7 +17,8 @@ class ChatsController < ApplicationController
       respond_to do |format|
         format.html { redirect_to group_chats_path( @group ) }
         format.json { render json: { "new_chat" => @message,
-                                     "current_user_id" => current_user.id
+                                     "current_user_id" => current_user.id,
+                                     "current_user_nickname" => current_user.nickname
                                     } 
                     }
       end

@@ -37,9 +37,12 @@
 <div class="btn-menu">
   <div id="member-menu">
     <% if user_joined_group?( current_user, @group ) && @group.user_id != current_user.id %>
+        <%= link_to group_chats_path( @group ) do %>
+          <button class="btn join-chat">チャット</button>
+        <% end %>
         <%= link_to cancel_group_path( @group ),data:{confirm: '本当に参加をキャンセルしますか？'} do %>
-        <button class="btn">キャンセル</button>
-      <% end %>
+         <button class="btn">キャンセル</button>
+        <% end %>
     <% elsif @group.user_id != current_user.id %>
       <%= link_to join_group_path( @group ) do %>
         <button class="btn">参加する</button>
@@ -48,8 +51,11 @@
   </div>
   <div id="host-menu">
     <% if @group.user_id == current_user.id %>
-        <%= link_to "編集", edit_group_path( @group )%> ｜
-        <%= link_to "削除", group_path( @group ), method: :delete, data:{confirm: '本当に募集を中止しますか？'}, class: "delete"%>
+        <p><%= link_to "編集", edit_group_path( @group )%> ｜
+        <%= link_to "削除", group_path( @group ), method: :delete, data:{confirm: '本当に募集を中止しますか？'}, class: "delete"%></p>
+    <% end %>
+    <%= link_to group_chats_path( @group ) do %>
+          <button class="btn join-chat">チャット</button>
     <% end %>
   </div>
 </div>
