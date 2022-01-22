@@ -4,11 +4,12 @@
     font-size: 3.3em;
     text-align: center;
     padding-bottom: 30px;
-    margin: 30px 0;
+    margin: 30px 0 0 0;
   }
   p {
     text-align: center;
     font-size: 1.2em;
+    padding: 0 0 30px 0;
     span {
       color: red;
     }
@@ -17,48 +18,52 @@
 // ~新規登録ページ上の文章~
 
 // 新規登録フォーム
-.form-wrapper {
-  .new-table {
-    margin: 0 auto;
-    width: 800px;
-    .new-body {
-      padding: 20px;
-      input {
-        width: 200px;
-        height: 2em;
-        border: none;
-        border-bottom: 1px solid black;
-      }
-      .field_with_errors > input {
-        border: 1px solid red;
-        opacity: 0.7;
-    }
-    }
-    .new-items {
-      text-align: left;
-      width: 300px;
-      font-size: 1.3em;
-      border-right: 1px solid #ccc;
-      span {
-        color: white;
-        background-color: red;
-      }
+.new-table {
+  width: 80%;
+  border-collapse: collapse;
+  font-size: 1.4em;
+  margin: auto;
+  .new-th {
+    text-align: left;
+    width: 20%;
+    font-size: 1.1em;
+    box-sizing: border-box;
+    border-right: 1px solid #ccc;
+    span {
+      color: white;
+      background-color: red;
     }
   }
-  .new-btn {
-    text-align: center;
-    padding: 30px;
-  }
-  .new-btn > input {
-    cursor: pointer;
+  .new-td {
+    padding: 15px;
     width: 30%;
-    height: 4em;
-    background-color: aliceblue;
-    &:hover {
-      background-color: rgb(221, 237, 250);
+    input {
+      height: 2em;
+      border: none;
+      border-bottom: 1px solid black;
+      outline: none;
+      &:focus {
+        border-bottom: 1px solid blue;
+      }
+    }
+    .field_with_errors > input {
+      border: 1px solid red;
+      opacity: 0.7;
     }
   }
-
+}
+.new-btn {
+  text-align: center;
+  padding-top: 30px;
+}
+.new-btn > input {
+  cursor: pointer;
+  width: 30%;
+  height: 4em;
+  background-color: aliceblue;
+  &:hover {
+    background-color: rgb(221, 237, 250);
+  }
 }
 // 〜ここまで新規登録フォーム〜
 
@@ -66,5 +71,30 @@
 // アカウントをお持ちの場合
 .has-account {
   text-align: center;
+  font-size: 1.2rem;
 }
 // 〜ここまでアカウントをお持ちの場合〜
+
+// レスポンシブデザイン対応
+@media all and ( max-width: 550px ) {
+  .explanation {
+    h1 {
+      font-size: 1.6em;
+      text-align: center;
+    }
+    p {
+      text-align: center;
+      font-size: 1.0em;
+    }
+  }
+  .new-table .new-th, .new-table .new-td {
+    display: block;
+    width: 100%;
+    text-align: center;
+    border-right: none;
+    font-size: 1.4rem;
+  }
+  .btn {
+    min-width: 150px;
+    }
+  }
