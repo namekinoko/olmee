@@ -1,3 +1,4 @@
+ <%= stylesheet_link_tag "top_pages/index", :media => "all"%>
  <div class="top-wrapper">
     <div class="word">
       <h1 id="catchphrase">いつもの旅を、誰かと一緒に</h1>
@@ -6,20 +7,37 @@
     <p class="credit">Photo by <a href="https://unsplash.com/@dinoreichmuth?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Dino Reichmuth</a> on <a href="https://unsplash.com/s/photos/trip?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
     </p>
   </div>
+  
   <!--サービスについての説明-->
   <div class="about-wrapper">
     <h2 class="about">Olmee(オルミー)について</h2>
-    <h1 class="sub-about">旅人x出会い</h1>
+    <h3 class="sub-about">旅人x出会い</h1>
     <p class="about-text">旅先での<span>出会い</span>を<br>サポートするマッチングサービスです！</p>
   </div>
+
+  <!--オルミーの由来-->
+  <div class="origin-olmee">
+    <h2>Olmee(オルミー）の由来</h2>
+    <h3>一期一会</h3>
+    <p><span>O</span>nce-in-a-<span>l</span>ifetime <span>mee</span>ting</p>
+    <p>一期一会の出会いを大切にしてほしいという願いから<br>一期一会を表した英語の一部分を組み合わせて誕生しました</p>
+  </div>
+
   <!--サービスの価格についての説明-->
   <div class="price-wrapper">
     <h2 class="price">料金</h2>
-    <h1 class="sub-price">0円</h1>
+    <h3 class="sub-price">0円</h1>
     <p class="price-text">このサービスは、全て<span>無料</span>でご利用いただけます</p>
   </div>
+
   <!--サービスの始め方の案内-->
   <div class="start-wrapper">
-      <h2 class="start">始め方</h2>
-      <%# ここに実際の画像をはっておく %>
+      <h2 class="start">サービスの始め方</h2>
+      <%= link_to new_user_path do %>
+              <button class="btn">新規作成</button>
+      <% end %>
+      <ol>
+        <li>１上記のボタンもしくはサイト上部の「新規登録」から<br>新規登録ページへアクセスしてください。</li>
+        <li>2 必須事項を入力後、すぐにご利用いただけます。</li>
+      </ol>
   </div>

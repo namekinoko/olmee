@@ -1,0 +1,185 @@
+//背景画像
+.top-wrapper {
+  background-image: url(/assets/main.jpg) ;
+  animation: fadeIn 4s linear;
+  background-size: cover;
+  height: 600px;
+  width: 100%;
+  position: relative;
+}
+//〜ここまで背景画像〜
+
+h1 {
+  font-size: 7rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2.3rem;
+}
+
+p:not(.not), ol{
+  font-size: 1.6rem;
+}
+
+// キャッチフレーズと写真のクレジット
+.word {
+  z-index: 40;
+  #catchphrase {
+    position: absolute;
+    top: 40%;
+    left: 200px;
+  }
+  #olmee {
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: 2s;
+    animation-delay: 7s;
+    animation-fill-mode:forwards;
+    position: absolute;
+    top: 40%;
+    left: 200px;
+    color: white;
+  }
+  a {
+    color: white;
+    text-decoration: underline;
+    letter-spacing: 1vw;
+  }
+}
+.credit {
+  position: absolute;
+  right: 10px;
+  bottom: 0;
+}
+// 〜ここまでキャッチフレーズ〜
+
+//サービス説明
+.about-wrapper {
+  text-align: center;
+  padding: 30px 0;
+  background-color: black;
+  opacity: 0.8;
+  color: white;
+  .sub-about {
+    padding-bottom: 20px;
+  }
+  .about-text {
+    span {
+      color: #E7DA66;
+    }
+  }
+}
+//〜ここまでサービス説明〜
+
+// 〜オルミーの由来〜
+  .origin-olmee {
+    text-align: center;
+    padding: 30px 0;
+    p {
+      span {
+        color: red;
+      }
+    }
+  }
+  .origin-olmee p:last-child {
+    padding: 10px 0;
+  }
+// 〜ここまでオルミーの由来〜
+
+//サービス料金
+.price-wrapper {
+  text-align: center;
+  padding: 30px 0;
+  background-color: black;
+  opacity: 0.8;
+  color: white;
+  .sub-price {
+    font-size: 28px;
+    text-decoration: underline;
+  }
+  .price-text {
+    padding-top: 20px;
+    span {
+      color: red;
+      font: bold;
+      font-weight: bold;
+    }
+  }
+}
+//〜ここまでサービス料金〜
+
+// サービスの始め方
+.start-wrapper {
+  text-align: center;
+  padding: 30px 0;
+  .btn {
+    background-color: #ddd162;
+    box-shadow: 0px 2px 7px 0px rgb(133, 133, 133); 
+    width: 150px;
+    height: 40px;
+    margin: 30px 0;
+    border-radius: 100vh;
+    transition: 0.4s;
+    border: none;
+    cursor: pointer;
+    &:hover {
+      // background-color: #ebdf75;
+      box-shadow: 0px 2px 7px 0px rgba(29, 29, 29, 0);
+    }
+  }
+}
+// 〜ここまでサービスの始め方〜
+
+// キャッチフレーズ（フェードイン用）
+#catchphrase span{
+  opacity: 0;
+}
+#catchphrase.appeartext span{
+  animation: fadeIn 4.9s linear;
+}
+// 〜ここまでキャッチフレーズ（フェードイン用）〜
+
+// animetion用
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+// 〜ここまでanimarion用〜
+
+
+@media all and ( max-width: 600px ) {
+  .word {
+    #catchphrase {
+      position: absolute;
+      left: 0;
+    }
+    #olmee {
+      position: absolute;
+      left: 20%;
+    }
+  }
+
+  h1 {
+    font-size: 3.3rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  h3 {
+    font-size: 1.8rem;
+  }
+
+  p:not(.not) {
+    font-size: 1.0rem;
+  }
+
+  ol {
+    font-size: 1.2rem;
+  }
+}

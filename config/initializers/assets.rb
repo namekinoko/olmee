@@ -14,6 +14,7 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 Rails.application.config.assets.precompile += %w( 
   admin.js 
   admin.css 
+  top_pages/index.css
   users/new.css
   users/show.css
   sessions/new.css
