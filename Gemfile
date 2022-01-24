@@ -71,3 +71,6 @@ gem "dotenv-rails"
 
 # 定期処理実行用gem
 gem 'whenever', :require => false
+
+# ページネーション用gem
+gem 'kaminari'
