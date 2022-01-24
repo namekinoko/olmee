@@ -13,6 +13,12 @@ class Group < ApplicationRecord
   validates :content, presence: false, length: { maximum: 240 }
   validates :prefecture, presence: true
 
+  # 募集期日が過ぎた場合自動的に削除する用メゾット
+  def self.delete_group
+    @group = Group.where("date < ?", Date.today )
+    @group.destroy_all
+  end 
+
   private
     #  入力された日付が今日以降のものかチェック
     def check_date
