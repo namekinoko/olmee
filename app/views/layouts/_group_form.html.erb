@@ -22,7 +22,7 @@
     </tr>
     <tr>
       <th>募集人数<span>必須</span></th>
-      <td><%= f.number_field :number %>人</td>
+      <td><%= f.number_field :number, min: "1" %>人</td>
     </tr>
     <tr>
       <th>内容</th>
