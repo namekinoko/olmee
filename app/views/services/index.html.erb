@@ -18,5 +18,6 @@
   </div>
   <div id="newest-posts">
       <%= render partial: 'layouts/posts', model: @group %>
+      <%= paginate @groups %>
   </div>
 </main>

@@ -13,21 +13,23 @@
   }
 }
 
-  .search {
-    display: flex;
-    border: none;
-    .btn {
-      height: 23px;
-      width: 23px;
-      background-color: white;
-      border-radius:25px;
-    }
-    .btn:hover {
-      background-color: rgb(77, 75, 75);
-    }
+.search {
+  display: flex;
+  border: none;
+  .btn {
+    height: 23px;
+    width: 23px;
+    background-color: white;
+    border-radius:25px;
   }
+  .btn:hover {
+    background-color: rgb(77, 75, 75);
+  }
+}
   // 〜ここまで都道府県検索部分〜
 
   #newest-posts {
     background: #f3edda;
   }
+
+  
