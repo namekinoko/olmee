@@ -63,7 +63,11 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-
+# 日本語変換用gem
 gem 'rails-i18n'
 
+# 環境変数用gem
 gem "dotenv-rails"
+
+# 定期処理実行用gem
+gem 'whenever', :require => false
