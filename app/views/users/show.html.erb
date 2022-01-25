@@ -3,23 +3,27 @@
 
 <div class="mypage-wrapper">
   <h1>マイページ</h1>
-  <div class="participation-event">ここに参加予定のイベント</div>
-  <div class="user-profile">
+  <div id="participate-event">
+    <h2>参加する募集</h2>
+    <%= render partial: 'layouts/posts', model: @group %>
+    <%= paginate @groups %>
+   </div>
+  <div id="user-profile">
     <table id="profile-table">
       <caption>プロフィール</caption>
       <tr>
-       <th class="profile-items">名前</th>
-       <td class="profile-body"><%= @user.name %></td>
+       <th class="profile-th">名前</th>
+       <td class="profile-td"><%= @user.name %></td>
       </tr>
       <tr>
-       <th class="profile-items">ニックネーム</th>
-       <td class="profile-body"><%= @user.nickname %></td>
+       <th class="profile-th">ニックネーム</th>
+       <td class="profile-td"><%= @user.nickname %></td>
       </tr>
       <tr>
-       <th class="profile-items">メールアドレス</th>
-       <td class="profile-body"><%= @user.email %></td>
+       <th class="profile-th">メールアドレス</th>
+       <td class="profile-td"><%= @user.email %></td>
       </tr>
     </table>
-    <p><%= link_to "プロフィールを編集する", edit_user_path( current_user )%></p>
   </div>
+    <p class="edit-profile"><%= link_to "プロフィールを編集する", edit_user_path( current_user )%></p>
 </div>

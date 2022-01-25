@@ -1,8 +1,11 @@
+h1 {
+  text-align: center;
+  padding: 20px 0;
+}
+
 // 参加予定イベント
-.participation-event {
-  height: 200px;
-  width: 200px;
-  background-color: aqua;
+#participate-event {
+  border-bottom: 1px solid #ccc;
 }
 // ~ここまで参加予定イベント~
 
@@ -13,23 +16,37 @@
   width: 100%;
   caption {
     font-size: 2em;
-    // text-align: left;
+    padding: 20px;
   }
-  .profile-items {
-    // text-align: left;
+  .profile-th {
     padding: 30px;
     font-size: 1.5em;
     border-right: 1px solid #ccc;
   }
-  .profile-body {
+  .profile-td {
     font-size: 1.5em;
     padding: 30px;
+    text-align: left;
   }
 }
 // 〜ここまでユーザーのプロフィール情報テーブル〜
+  .edit-profile {
+    font-size: 1.2em;
+    padding: 15px 0;
+    text-align: center;
+  }
 
-p {
-  padding-top: 10px;
-  text-align: center;
-  font-size: 1.4em;
-}
+
+  @media all and ( max-width: 550px ) {
+    #profile-table .profile-th, #profile-table .profile-td {
+      display: block;
+      width: 100%;
+      text-align: center;
+      border-right: none;
+      font-size: 1.4rem;
+    }
+
+    .profile-td {
+      border-bottom: 1px solid #ccc;
+    }
+  }
