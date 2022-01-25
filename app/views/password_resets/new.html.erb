@@ -1,8 +1,9 @@
 <% provide(:title, "パスワード再設定手続き") %>
 <%= stylesheet_link_tag "password_resets/new", :media => "all" %>
-<h1>パスワード再設定手続き</h1>
-<p>パスワードをお忘れの方は、アカウント登録時のメールアドレスを入力してください。</p>
-
+<div class="reset-text">
+  <h1>パスワード再設定手続き</h1>
+  <p>パスワードをお忘れの方は、アカウント登録時のメールアドレスを入力してください。</p>
+</div>
 <div class="reset-wrapper">
     <%= form_with( url: password_resets_path, scope: :password_reset, local: true ) do |f| %>
 

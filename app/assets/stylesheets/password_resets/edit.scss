@@ -1,8 +1,25 @@
+h1 {
+  text-align: center;
+  padding: 15px;
+}
+
+// パスワード変更用
 .re-password {
   display: flex;
   justify-content: center;
+  input {
+    display: block;
+    width: 20rem;
+    height: 3rem;
+    margin: 10px 0;
+  }
+  .btn {
+    border: 1px solid #000;
+    background-color: aliceblue;
+    cursor: pointer;
+    &:hover {
+      background-color: rgb(221, 237, 250);
+    }
+  }
 }
-
-label {
-  font-size: 1.3em;
-}
+// 〜ここまでパスワード変更用〜
