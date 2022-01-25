@@ -1,21 +1,41 @@
 <% provide( :title, "プロフィール編集" ) %>
-<h1>プロフィール編集</h1>
+<%= stylesheet_link_tag 'users/edit', :media => "all" %>
 
+<h1>プロフィール編集</h1>
 <div class="edit-wrapper">
-  <div class="col-md-6 col-md-offset-3">
     <%= form_with(model: @user, local: true) do |f| %>
       <%= render 'shared/error_messages', model: @user %>
 
-      <%= f.label :name %>
-      <%= f.text_field :name, class: 'form-control' %>
+      <table class="edit-table">
+        <tr>
+          <th class="edit-th">
+            <%= f.label :name %>
+          </th>
+          <td class="edit-td">
+            <%= f.text_field :name %>
+          </td>
+        </tr>
 
-      <%= f.label :nickname %>
-      <%= f.text_field :nickname, class: 'form-control' %>
+        <tr>
+          <th class="edit-th">
+            <%= f.label :email %>
+          </th>
+          <td class="edit-td">
+            <%= f.email_field :email %>
+          </td>
+        </tr>
 
-      <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control' %>
+        <tr>
+          <th class="edit-th">
+            <%= f.label :nickname %>
+          </th>
+          <td class="edit-td">
+            <%= f.text_field :nickname %>
+          </td>
+        </tr>
+      </table>
 
-      <%= f.submit "変更する", class: "btn" %>
+      <p class="edit-btn"><%= f.submit "変更する", class: "btn" %></p>
     <% end %>
   </div>
 </div>

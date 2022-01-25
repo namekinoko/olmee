@@ -1,0 +1,75 @@
+h1 {
+  padding: 15px;
+  text-align: center;
+}
+
+// 新規登録フォーム
+.edit-table {
+  width: 80%;
+  border-collapse: collapse;
+  font-size: 1.4em;
+  margin: auto;
+  .edit-th {
+    text-align: left;
+    width: 20%;
+    font-size: 1.1em;
+    box-sizing: border-box;
+    border-right: 1px solid #ccc;
+  }
+  .edit-td {
+    padding: 15px;
+    width: 30%;
+    input {
+      height: 2em;
+      border: none;
+      border-bottom: 1px solid black;
+      outline: none;
+      &:focus {
+        border-bottom: 1px solid blue;
+      }
+    }
+    .field_with_errors > input {
+      border: 1px solid red;
+      opacity: 0.7;
+    }
+  }
+}
+
+.edit-btn {
+  text-align: center;
+  padding: 30px 0;
+}
+.edit-btn > input {
+  cursor: pointer;
+  width: 30%;
+  height: 4em;
+  background-color: aliceblue;
+  &:hover {
+    background-color: rgb(221, 237, 250);
+  }
+}
+// 〜ここまで新規登録フォーム〜
+
+// レスポンシブデザイン対応
+@media all and ( max-width: 550px ) {
+  .explanation {
+    h1 {
+      font-size: 1.6em;
+      text-align: center;
+    }
+    p {
+      text-align: center;
+      font-size: 1.0em;
+    }
+  }
+  .edit-table .edit-th, .edit-table .edit-td {
+    display: block;
+    width: 100%;
+    text-align: center;
+    border-right: none;
+    font-size: 1.4rem;
+  }
+  .btn {
+    min-width: 150px;
+    }
+  }

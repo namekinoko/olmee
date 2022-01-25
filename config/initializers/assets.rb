@@ -16,6 +16,7 @@ Rails.application.config.assets.precompile += %w(
   admin.css 
   top_pages/index.css
   users/new.css
+  users/edit.css
   users/show.css
   sessions/new.css
   services/index.css
