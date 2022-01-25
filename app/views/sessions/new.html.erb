@@ -1,28 +1,22 @@
 <% provide( :title, "ログイン" )%>
 <%= stylesheet_link_tag 'sessions/new', :media => "all" %>
 
-<div id="login-body">
-    <div class="login">
-      <div class="explanation">
-        <h1>ログイン</h1>
-        <p>全ての項目が<span>必須</span>です。</p>
-      </div>
-      <div class="login-wrapper">
-        <%= form_with(url: login_path, scope: :session, local: true) do |f| %>
-        <%= flash[:danger] %>
-            <%= f.label :email, "メールアドレス" %>
-            <%= f.email_field :email %>
+<div class="login-text">
+  <h1>ログイン</h1>
+</div>
+<div class="login-wrapper">
+  <%= form_with(url: login_path, scope: :session, local: true) do |f| %>
+  <%= flash[:danger] %>
+      <%= f.label :email, "メールアドレス" %>
+      <%= f.email_field :email %>
 
-            <%= f.label :password, "パスワード" %>
-            <%= f.password_field :password, class: 'form-control', placeholder: "半角英数字6文字以上"%>
+      <%= f.label :password, "パスワード" %>
+      <%= f.password_field :password, class: 'form-control', placeholder: "半角英数字6文字以上"%>
 
-            <%= f.submit "ログイン", class: "btn" %>
-        <% end %>
-      </div>
-      <div class="has-account">
-        <p><%= link_to "新規登録はこちら", new_user_path %></a></p>
-        <p><%= link_to "パスワードをお忘れの方", new_password_reset_path %></p>
-      </div>
-    </div>
-    
+      <%= f.submit "ログイン", class: "btn" %>
+  <% end %>
+</div>
+<div class="login-text">
+  <p><%= link_to "新規登録はこちら", new_user_path %></a></p>
+  <p><%= link_to "パスワードをお忘れの方", new_password_reset_path %></p>
 </div>
