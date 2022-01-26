@@ -17,7 +17,13 @@
     </div>
   </div>
   <div id="newest-posts">
-      <%= render partial: 'layouts/posts', model: @group %>
+      <%= render partial: 'layouts/posts', model: @groups %>
+      <% if @groups == [] %>
+        <div class="no-post">
+          <h1>まだ募集はありません</h1>
+          <p><%= link_to "募集はこちらから", new_group_path %></p>
+        </div>
+      <% end %>
       <%= paginate @groups %>
   </div>
 </main>
