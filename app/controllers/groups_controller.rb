@@ -53,13 +53,18 @@ class GroupsController < ApplicationController
   # グループに参加する処理 
   def join
     @group = Group.find_by(id: params[:id])
-    if !@group.users.include?( current_user )
-      @group.users << current_user
-      flash[:success] = "募集に参加しました"
-      if ( request.referer&.include?( '/services' ) )
-        redirect_to( services_url )
-      else
-        redirect_to  group_path( @group )
+    if @group.number == @group.users.count-1
+      flash[:warning] = "募集定員です 参加できません"
+      redirect_to( services_url )
+    else
+      if !@group.users.include?( current_user )
+        @group.users << current_user
+        flash[:success] = "募集に参加しました"
+        if ( request.referer&.include?( '/services' ) )
+          redirect_to( services_url )
+        else
+          redirect_to  group_path( @group )
+        end
       end
     end
   end

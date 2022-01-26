@@ -10,6 +10,16 @@ h1 {
   font-size: 1.3em;
 }
 
+.max-number {
+  padding: 15px;
+  font-size: 1.5rem;
+  margin: 15px 0;
+  span {
+    border: 1px solid black;
+    padding: 10px;
+  }
+}
+
 // 募集詳細ページテーブルのデザイン
 table {
     width: 80%;
@@ -33,6 +43,7 @@ table {
 }
 // 〜ここまで募集詳細ページのデザイン〜
 
+// 参加ボタン
 .btn-menu {
   text-align: center;
   .btn {
@@ -47,6 +58,7 @@ table {
     }
   }
 }
+// 〜ここまで参加ボタン〜
 
 // レスポンシブデザイン対応
 @media all and ( max-width: 767px ) {

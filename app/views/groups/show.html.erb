@@ -1,5 +1,6 @@
 <%= stylesheet_link_tag 'groups/show', :media => "all" %>
 <% provide( :title, "募集詳細" )%>
+
 <% if user_joined_group?( current_user, @group ) && @group.user_id != current_user.id %>
   <h1>募集詳細(<span>参加済み</span>)</h1>
 <% else %>
@@ -44,8 +45,14 @@
          <button class="btn">キャンセル</button>
         <% end %>
     <% elsif @group.user_id != current_user.id %>
-      <%= link_to join_group_path( @group ) do %>
-        <button class="btn">参加する</button>
+      <% if @group.number == @group.users.count-1 %>
+        <%= link_to services_path do %>
+          <p class="max-number"><span>募集終了</span></p>
+        <% end %>
+      <% else %>
+        <%= link_to join_group_path( @group ) do %>
+          <button class="btn">参加する</button>
+        <% end %>
       <% end %>
     <% end %>
   </div>
