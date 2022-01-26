@@ -1,24 +1,24 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# 1 アプリケーション概要
+一緒に旅行したい人をみつけるマッチングアプリケーションです。
 
-Things you may want to cover:
+# 2 URL
+<https://olmee.herokuapp.com/>
 
-* Ruby version
+# 3 使用技術
+•Ruby 3.0.2
+•Rails 6.1.4.1
+•jquery 3.6.0
+•PostgreSQL 14.0
 
-* System dependencies
+# 4 機能
+•レスポンシブデザイン
+•投稿機能
+•チャット機能（Ajax）
+•ページネーション（kaminari）
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# 5 今後実装すること
+•ゲストログイン機能
+•テストコード
