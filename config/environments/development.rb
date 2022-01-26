@@ -35,7 +35,7 @@ Rails.application.configure do
 
   
   host = 'localhost:3000'
-  Rails.application.routes.default_url_options[:host] = host
+  config.action_mailer.default_url_options = { host: host }
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp

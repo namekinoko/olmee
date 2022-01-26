@@ -12,7 +12,12 @@ class ContactsController < ApplicationController
     @contact = Contact.new( contact_params )
     if @contact.save
       ContactMailer.contact_mail( @contact ).deliver
-      redirect_to main_service_path
+      falsh[:success] = "お問い合わせ内容を送信しました"
+      if  logged_in? 
+        redirect_to( services_url )
+      else
+        redirect_to  '/'
+      end
     else
       render new_contact_path
     end
